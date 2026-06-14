@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class StarSystemManager : MonoBehaviour
 {
     [Header("Scene Names")]
+    [SerializeField] private string mainMenuSceneName = "MainMenu";
     [SerializeField] private string levelMapSceneName = "LevelMap";
 
     [Header("Win UI")]
@@ -50,6 +51,11 @@ public class StarSystemManager : MonoBehaviour
     public void ReturnToLevelMap()
     {
         SceneManager.LoadScene(levelMapSceneName);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(mainMenuSceneName);
     }
 
     public void RestartLevel()
