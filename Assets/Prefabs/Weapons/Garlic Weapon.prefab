@@ -104,4 +104,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e5fe2f5d802ec40b6e991ed4e5be42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GarlicBehaviour
+  weaponData: {fileID: 11400000, guid: 23eb46f5bf5144b428a94f1d9a6c79c7, type: 2}
   destroyAfterSeconds: 2
