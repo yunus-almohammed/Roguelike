@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class LevelButtonUI
 {
     public Button button;
+    public Image buttonImage;
     public GameObject lockedIcon;
     public GameObject[] starObjects;
     public TextMeshProUGUI levelNumberText;
@@ -20,6 +21,10 @@ public class LevelMapManager : MonoBehaviour
 
     [Header("Level Buttons")]
     [SerializeField] private LevelButtonUI[] levelButtons;
+
+    [Header("Level Button Sprites")]
+    [SerializeField] private Sprite[] unlockedButtonSprites;
+    [SerializeField] private Sprite lockedButtonSprite;
 
     [Header("Difficulty Panel")]
     [SerializeField] private GameObject difficultyPanel;
@@ -116,6 +121,34 @@ public class LevelMapManager : MonoBehaviour
             if (levelUI.button != null)
             {
                 levelUI.button.interactable = unlocked;
+            }
+
+            if (levelUI.button != null)
+            {
+                levelUI.button.interactable = unlocked;
+            }
+
+            if (levelUI.buttonImage != null)
+            {
+                if (unlocked)
+                {
+                    if (unlockedButtonSprites != null && i < unlockedButtonSprites.Length && unlockedButtonSprites[i] != null)
+                    {
+                        levelUI.buttonImage.sprite = unlockedButtonSprites[i];
+                    }
+                }
+                else
+                {
+                    if (lockedButtonSprite != null)
+                    {
+                        levelUI.buttonImage.sprite = lockedButtonSprite;
+                    }
+                }
+            }
+
+            if (levelUI.lockedIcon != null)
+            {
+                levelUI.lockedIcon.SetActive(!unlocked);
             }
 
             if (levelUI.lockedIcon != null)
