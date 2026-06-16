@@ -67584,11 +67584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03aff7a060435e5419af8ceacdb2f10d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GarlicController
-  prefab: {fileID: 8374650996446675733, guid: fb1d995fde99a0b4092ade5325f91ce8, type: 3}
-  damage: 0
-  speed: 0
-  cooldownDuration: 3
-  pierce: 0
+  weaponData: {fileID: 11400000, guid: 23eb46f5bf5144b428a94f1d9a6c79c7, type: 2}
 --- !u!1 &939979269
 GameObject:
   m_ObjectHideFlags: 0
@@ -68624,11 +68620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1cc8c73ab61a204584d59e3f5019a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KnifeController
-  prefab: {fileID: 4105737911761558446, guid: fb6dcc99ecbe08a49b4f8be1f37c4e27, type: 3}
-  damage: 0
-  speed: 10
-  cooldownDuration: 2
-  pierce: 0
+  weaponData: {fileID: 11400000, guid: 248194ff36dfbaf4ead7bfa92627e532, type: 2}
 --- !u!1 &1917719355
 GameObject:
   m_ObjectHideFlags: 0
@@ -68867,6 +68859,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6701222788789756400, guid: d349728580ae3d64899f82ab1d2f9ba8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6735446534488671013, guid: d349728580ae3d64899f82ab1d2f9ba8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.94
