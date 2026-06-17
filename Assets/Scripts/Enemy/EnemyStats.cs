@@ -6,14 +6,18 @@ public class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
 
-    //Current stats
+    [Header("XP Drop")]
+    public GameObject xpGemPrefab;
+    public int xpAmount = 1;
+
+    // Current stats
     float currentMoveSpeed;
     float currentHealth;
     float currentDamage;
 
     void Awake()
     {
-        //Assign the vaiables
+        // Assign the variables
         currentMoveSpeed = enemyData.MoveSpeed;
         currentHealth = enemyData.MaxHealth;
         currentDamage = enemyData.Damage;
@@ -31,6 +35,22 @@ public class EnemyStats : MonoBehaviour
 
     public void Kill()
     {
+        DropXP();
         Destroy(gameObject);
+    }
+
+    private void DropXP()
+    {
+        if (xpGemPrefab == null)
+            return;
+
+        GameObject xpGem = Instantiate(xpGemPrefab, transform.position, Quaternion.identity);
+
+        ExperienceGem experienceGem = xpGem.GetComponent<ExperienceGem>();
+
+        if (experienceGem != null)
+        {
+            experienceGem.xpAmount = xpAmount;
+        }
     }
 }

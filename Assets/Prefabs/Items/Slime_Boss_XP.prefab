@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &830984273728023215
+--- !u!1 &5735447036744063148
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 979842680826551937}
-  - component: {fileID: 4959253602773053191}
-  - component: {fileID: 2687732531875214977}
-  - component: {fileID: 1106080224173729249}
-  - component: {fileID: 5046929925038846136}
-  - component: {fileID: 3391213143716884685}
+  - component: {fileID: 337376698993102620}
+  - component: {fileID: 8564460130870743635}
+  - component: {fileID: 2416082388073160610}
+  - component: {fileID: 2864357982229391753}
   m_Layer: 0
-  m_Name: Boss_Slime
-  m_TagString: Enemy
+  m_Name: Slime_Boss_XP
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &979842680826551937
+--- !u!4 &337376698993102620
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830984273728023215}
+  m_GameObject: {fileID: 5735447036744063148}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1414299, y: -8.485489, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: -19.71152, y: -9.59, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4959253602773053191
+--- !u!212 &8564460130870743635
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830984273728023215}
+  m_GameObject: {fileID: 5735447036744063148}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -85,45 +83,23 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 6927709722470541324, guid: 891e01140ee0158419d06e1e2696f82c, type: 3}
+  m_Sprite: {fileID: -6853345886187105431, guid: ce7ea8d57bcd1a0498c32000a83e3d9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.6875, y: 0.625}
+  m_Size: {x: 2.25, y: 2.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!95 &2687732531875214977
-Animator:
-  serializedVersion: 7
+--- !u!58 &2416082388073160610
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830984273728023215}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 191635e4a235091409854727e6966064, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!61 &1106080224173729249
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830984273728023215}
+  m_GameObject: {fileID: 5735447036744063148}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -152,42 +128,22 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6875, y: 0.625}
-    newSize: {x: 0.6875, y: 0.625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.6875, y: 0.625}
-  m_EdgeRadius: 0
---- !u!114 &5046929925038846136
+  m_Radius: 1.125
+--- !u!114 &2864357982229391753
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830984273728023215}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3d5e0728caf7c04aa34049a9d6f9208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  enemyData: {fileID: 11400000, guid: c05033e699c68ae49bec802f7f4d168c, type: 2}
---- !u!114 &3391213143716884685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830984273728023215}
+  m_GameObject: {fileID: 5735447036744063148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eea2ecd1e19e23d4b87ae49d8698aaf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 54c3de99e000c58428f0237473687228, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  enemyData: {fileID: 11400000, guid: c05033e699c68ae49bec802f7f4d168c, type: 2}
-  xpGemPrefab: {fileID: 5735447036744063148, guid: 5405a9ed52f5bb846986d5f3e8b0372d, type: 3}
-  xpAmount: 10
+  m_EditorClassIdentifier: Assembly-CSharp::ExperienceGem
+  xpAmount: 1
+  stackRange: 1.2
+  stackCheckInterval: 0.2
+  maxStackXP: 999
+  pickupRange: 3
+  moveSpeed: 8

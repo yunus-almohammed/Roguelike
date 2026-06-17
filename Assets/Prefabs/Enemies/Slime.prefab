@@ -170,7 +170,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6767982040372724987}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3d5e0728caf7c04aa34049a9d6f9208, type: 3}
   m_Name: 
@@ -189,3 +189,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
   enemyData: {fileID: 11400000, guid: 78ea14dedcc6c2d4d844ab48aea80bfb, type: 2}
+  xpGemPrefab: {fileID: 9215403709556953754, guid: c33f33cd92143fe4f8974a3ce9a429e9, type: 3}
+  xpAmount: 1
