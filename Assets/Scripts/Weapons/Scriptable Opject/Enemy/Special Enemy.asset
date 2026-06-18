@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Special Enemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScriptableObject
   moveSpeed: 2
-  maxHealth: 100
+  maxHealth: 50
   damage: 20
