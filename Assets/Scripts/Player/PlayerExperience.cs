@@ -9,17 +9,28 @@ public class PlayerExperience : MonoBehaviour
     public int currentXP = 0;
     public int xpToNextLevel = 10;
 
-    [Header("UI")]
+    [Header("XP UI")]
     public Image xpBarFill;
     public TextMeshProUGUI levelText;
-    public TextMeshProUGUI xpText;
+
+    [Header("Upgrade System")]
+    public UpgradeManager upgradeManager;
 
     [Header("RGB Bar")]
     public bool useRGBColor = true;
     public float rgbSpeed = 0.5f;
 
+    private int pendingUpgradeChoices;
+
     private void Start()
     {
+        Time.timeScale = 1f;
+
+        if (upgradeManager != null)
+        {
+            upgradeManager.OnUpgradeChosen += HandleUpgradeChosen;
+        }
+
         UpdateXPUI();
     }
 
@@ -27,7 +38,11 @@ public class PlayerExperience : MonoBehaviour
     {
         if (useRGBColor && xpBarFill != null)
         {
-            float hue = Mathf.PingPong(Time.time * rgbSpeed, 1f);
+            float hue = Mathf.PingPong(
+                Time.unscaledTime * rgbSpeed,
+                1f
+            );
+
             xpBarFill.color = Color.HSVToRGB(hue, 1f, 1f);
         }
     }
@@ -43,31 +58,62 @@ public class PlayerExperience : MonoBehaviour
         }
 
         UpdateXPUI();
-
-        Debug.Log("XP: " + currentXP + " / " + xpToNextLevel);
+        TryShowNextUpgrade();
     }
 
     private void LevelUp()
     {
         currentLevel++;
         xpToNextLevel += 10;
+        pendingUpgradeChoices++;
 
         Debug.Log("Level Up! Current Level: " + currentLevel);
+    }
+
+    private void TryShowNextUpgrade()
+    {
+        if (pendingUpgradeChoices <= 0)
+            return;
+
+        if (upgradeManager == null)
+        {
+            Debug.LogError("Upgrade Manager is not connected.");
+            return;
+        }
+
+        if (upgradeManager.IsUpgradePanelOpen)
+            return;
+
+        pendingUpgradeChoices--;
+        upgradeManager.ShowUpgradeChoices();
+    }
+
+    private void HandleUpgradeChosen()
+    {
+        TryShowNextUpgrade();
     }
 
     private void UpdateXPUI()
     {
         if (xpBarFill != null)
         {
-            xpBarFill.fillAmount = (float)currentXP / xpToNextLevel;
+            xpBarFill.fillAmount =
+                (float)currentXP / xpToNextLevel;
         }
 
         if (levelText != null)
         {
             levelText.text = "Lvl " + currentLevel;
         }
-
-
     }
 
+    private void OnDestroy()
+    {
+        if (upgradeManager != null)
+        {
+            upgradeManager.OnUpgradeChosen -= HandleUpgradeChosen;
+        }
+
+        Time.timeScale = 1f;
+    }
 }
